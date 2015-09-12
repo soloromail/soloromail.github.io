@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<style>
+body {
+width: 100%;
+background: #000;
+}
+</style>
+<body>
+<?php
+error_reporting(1);
+
+
+
+$text='пресвятая богородица моисей мурин пантелеймон матрона серафим';
+
+
+
+
+
+
+
+
+//ini_set('display_errors','On');
+//error_reporting('E_ALL');
+function pbc($teaxt)	{
+
+	$teaxt = str_replace(',', '', $teaxt);
+    $teaxt = str_replace('.', '', $teaxt);
+    $teaxt = str_replace(':', '', $teaxt);
+    $teaxt = str_replace('?', '', $teaxt);
+    $teaxt = str_replace('!', '', $teaxt);
+    $teaxt = str_replace(';', '', $teaxt);
+    $teaxt = str_replace('/', '', $teaxt);
+    $teaxt = str_replace('\'', '', $teaxt);
+    $teaxt = str_replace('"', '', $teaxt);
+    $teaxt = str_replace('*', '', $teaxt);
+    $teaxt = str_replace('1', '', $teaxt);
+    $teaxt = str_replace('2', '', $teaxt);
+    $teaxt = str_replace('3', '', $teaxt);
+    $teaxt = str_replace('4', '', $teaxt);
+    $teaxt = str_replace('5', '', $teaxt);
+    $teaxt = str_replace('6', '', $teaxt);
+    $teaxt = str_replace('7', '', $teaxt);
+    $teaxt = str_replace('8', '', $teaxt);
+    $teaxt = str_replace('9', '', $teaxt);
+    $teaxt = str_replace('0', '', $teaxt);
+    $teaxt = str_replace('(', '', $teaxt);
+    $teaxt = str_replace(')', '', $teaxt);
+    $teaxt = str_replace('–', '', $teaxt);
+    $teaxt = str_replace('-', '', $teaxt);
+    $teaxt = str_replace('…', '', $teaxt);
+    $teaxt = str_replace('«', '', $teaxt);
+    $teaxt = str_replace('»', '', $teaxt);
+    $teaxt = str_replace('I', '', $teaxt);
+    $teaxt = str_replace('S', '', $teaxt);
+    $teaxt = str_replace('M', '', $teaxt);
+    $teaxt = str_replace('X', '', $teaxt);
+    $teaxt = str_replace('D', '', $teaxt);
+    $teaxt = str_replace('E', '', $teaxt);
+    $teaxt = str_replace('W', '', $teaxt);
+    $teaxt = str_replace('[', '', $teaxt);
+    $teaxt = str_replace(']','', $teaxt);
+    $teaxt = str_replace(' ', '', $teaxt);
+
+
+	return $teaxt;
+}
+
+function mb_str_split($str)
+    {
+        preg_match_all('#.{1}#uis', $str, $out);
+        return $out[0];
+    }
+
+function stl($str) {
+ $str = strtolower($str);
+
+ $search = array(
+ 'Й','Ц','У','К','Е','Н','Г','Ш','Щ','З','Х','Ъ','Ф','Ы','В','А','П','Р','О','Л','Д','Ж','Э','Я','Ч','С','М','И','Т','Ь','Б','Ю','Ё'
+ );
+
+ $replace = array(
+ 'й','ц','у','к','е','н','г','ш','щ','з','х','ъ','ф','ы','в','а','п','р','о','л','д','ж','э','я','ч','с','м','и','т','ь','б','ю','ё'
+ );
+
+ $str = str_replace($search, $replace, $str);
+ return $str;
+ }
+$text=stl($text);
+$text=pbc($text);
+$text=mb_str_split($text); //разделать мясо
+//$text=explode(' ', $text); //разделать мясо
+$tec="";
+$pred=" ";
+$arr=array();
+for($i=0; $i<=count($text)-1; $i++) {
+//if(!empty(trim($text[$i]))) {
+$tec=$text[$i];
+$arr[$pred][count($arr[$pred])]=$tec;
+$pred=$tec;
+//}
+}
+//print_r($arr);
+//for($uu=0; $uu<=20; $uu++) {
+/*
+$_SESSION['ttes']="";
+$teka=rand(0, count($arr[' ']));
+$tek=$arr[' '][rand(0, count($arr[$teka]))]; //текущая буква
+$pred=" ";
+for($i=0;$i<=100000;$i++) {
+if($pred=="") echo ''.$tek;
+if($pred!="") {
+$tek=$arr[$pred][rand(0, count($arr[$pred])-1)];
+$_SESSION['ttes'].=$tek.' ';
+}
+$pred=$tek;
+}
+*/
+$nms='';
+for($t=1; $t<=1000000; $t++) {
+$op=rand(0, count($arr)-1);
+$lsa=0;
+foreach($arr as $asad=>$jk) {
+if($lsa==$op){$lk=$asad;break;}
+$lsa+=1;
+}
+$_SESSION['ttes']="";
+$teka=rand(0, count($arr[$lk])-1);
+if($teka<=0)$teka=0;
+$tek=$arr[$lk][$teka]; //текущая буква
+$pred="";
+//echo $tek;
+for($i=0;$i<=10000;$i++) {
+//if($pred=="") echo ''.$tek;
+//if($tek=="") $tek=$arr[' '][rand(0, count($arr[$teka]))];
+//if($pred=='') $pred=$tek;
+if($pred!="") {
+//echo $pred.' '.$arr[$pred][rand(0, count($arr[$pred])-1)].' ';
+$tek=$arr[$pred][rand(0, count($arr[$pred])-1)];
+$_SESSION['ttes'].=$tek.'';
+}
+$pred=$tek;
+}
+/*$fp = fopen("book/pages/".$t.".html", "w");
+
+fwrite($fp, '<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<title>Porn-library</title>
+<style>
+body {
+background: #1c1b02;
+}
+#main {
+max-width: 400px;
+background: #ffffff;
+min-height: 400px;
+margin: auto;
+border: 2px solid #c7c20d;
+border-radius: 10;
+font-family: courier new;
+text-align: justify;
+}
+#head {
+width: 100%;
+background: #c7c20d;
+height: 30px;
+border-bottom: 2px solid #000000;
+border-radius: 5 5 0 0;
+font-size: 20pt;
+color: #000000;
+font-weight: bold;
+text-align: center;
+font-family: courier new;
+}
+#line {
+width: 100%;
+background: #703908;
+height: 30px;
+border-bottom: 2px solid #000000;
+font-size: 15pt;
+color: #eeeeee;
+font-weight: bold;
+text-align: left;
+font-family: courier new;
+}
+#line:hover {
+background: #1c0e02;
+}
+a {
+text-decoration: none;
+}
+</style>
+</head>
+<body>
+<div id="main">
+<div id="head">Porn-library</div>
+
+<div style="width: 98%; margin: auto;">'.$_SESSION['ttes'].'
+</div>
+
+</div>
+</body>
+</html>
+
+');
+
+fclose($fp);
+chmod("book", 0777);*/
+//echo '<div style="text-align: justify; padding: 15px; margin: 10px 0 0 0; background: #111; color: #ccc;">$text[]="'.trim($_SESSION['ttes']).'";</div>';
+$nms.=trim($_SESSION['ttes']).'
+';
+}
+$ras=rand(1000000,9999999);
+$fp=fopen('rr/'.$ras.'.txt', 'a+');
+fwrite($fp, $nms);
+fclose($fp);
+//echo '<br>';
+
+//}
+//print_r($arr);
+
+
+
+
