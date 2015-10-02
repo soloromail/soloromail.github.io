@@ -1,6 +1,6 @@
 // ==Userscript==
 // @name legendsgame_bot
-// @description бот для какой-то игры
+// @description бот для какой-то игры изм
 // @author vk.com/it256
 // @include http://epoxa.mobi/*
 // ==/Userscript==
@@ -114,12 +114,12 @@ legendsLink(legendsFindLink("Начать бой"), 500/speed);
 if(!legendsFindLink('Начать бой')&&!document.getElementsByClassName('progress-blue')[0]) {
 legendsLink(legendsFindLink("Главная"), 500/speed);
 }
-if(legendsFindLinker('id')&&legendsFindLinker('use_spell')) {
-if(document.getElementsByClassName('progress-blue')[0].style.width=='100%'&&document.getElementsByClassName('progress-blue')[1].style.width=='100%') {
-legendsLink(legendsFindLinker('use_spell=3'), 500/speed);
-}else{
+if(legendsFindLinker('id')) {
+//if(document.getElementsByClassName('progress-blue')[0].style.width=='100%'&&document.getElementsByClassName('progress-blue')[1].style.width=='100%') {
+//legendsLink(legendsFindLinker('use_spell=3'), 500/speed);
+//}else{
 legendsLink(legendsFindLinker('key'), 500/speed);
-}
+//}
 }
 }
 //Поход
@@ -133,12 +133,12 @@ legendsLink(legendsFindLinkEnd("Отправиться"), 2000);
 if(legendsFindLinkEnd('Начать бой')) {
 legendsLink(legendsFindLinkEnd("Начать бой"), 500/speed);
 }
-if(legendsFindLinker('attack')&&legendsFindLinker('use_spell')) {
-if(document.getElementsByClassName('progress-blue')[0].style.width=='100%'&&document.getElementsByClassName('progress-blue')[1].style.width=='100%') {
-legendsLink(legendsFindLinker('use_spell=3'), 500/speed);
-}else{
+if(legendsFindLinker('attack')) {
+//if(document.getElementsByClassName('progress-blue')[0].style.width=='100%'&&document.getElementsByClassName('progress-blue')[1].style.width=='100%') {
+//legendsLink(legendsFindLinker('use_spell=3'), 500/speed);
+//}else{
 legendsLink(legendsFindLinker('attack'), 500/speed);
-}
+//}
 }
 }
 //Арена
@@ -147,12 +147,12 @@ legendsLink(legendsFindLink("Арена"), 500/speed);
 }
 if(legendsFindText('Арена')&&legendsFindLink('Главная')) {
 legendsLink(legendsFindLinkEnd("Сразиться"), 500/speed);
-if(legendsFindLinker('attack')&&legendsFindLinker('use_spell')) {
-if(document.getElementsByClassName('progress-blue')[0].style.width=='100%'&&document.getElementsByClassName('progress-blue')[1].style.width=='100%') {
-legendsLink(legendsFindLinker('use_spell=3'), 500/speed);
-}else{
+if(legendsFindLinker('attack')) {
+//if(document.getElementsByClassName('progress-blue')[0].style.width=='100%'&&document.getElementsByClassName('progress-blue')[1].style.width=='100%') {
+//legendsLink(legendsFindLinker('use_spell=3'), 500/speed);
+//}else{
 legendsLink(legendsFindLinker('attack'), 500/speed);
-}
+//}
 }
 }
 if(legendsFindText('Вы устали')) {
@@ -169,12 +169,12 @@ legendsLink(legendsFindLink("Выживание"), 500/speed);
 if(legendsFindLink('Главная')) {
 legendsLink(legendsFindLink("Продолжить"), 500/speed);
 legendsLink(legendsFindLinkEnd("Отправиться"), 500/speed);
-if(legendsFindLinker('attack')&&legendsFindLinker('use_spell')) {
-if(document.getElementsByClassName('progress-blue')[0].style.width=='100%'&&document.getElementsByClassName('progress-blue')[1].style.width=='100%') {
-legendsLink(legendsFindLinker('use_spell=3'), 500/speed);
-}else{
+if(legendsFindLinker('attack')) {
+//if(document.getElementsByClassName('progress-blue')[0].style.width=='100%'&&document.getElementsByClassName('progress-blue')[1].style.width=='100%') {
+//legendsLink(legendsFindLinker('use_spell=3'), 500/speed);
+//}else{
 legendsLink(legendsFindLinker('attack'), 500/speed);
-}
+//}
 }
 }
 
